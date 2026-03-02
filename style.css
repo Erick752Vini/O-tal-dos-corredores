@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #0d0d0d;
+    color: white;
+  }
+  
+  .hero {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1603386329225-868f9a2b8b41") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 60px;
+    letter-spacing: 5px;
+  }
+  
+  .hero p {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+  
+  button {
+    padding: 12px 25px;
+    background-color: #e10600;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff2a2a;
+  }
+  
+  section {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .sobre {
+    background-color: #111;
+  }
+  
+  .stats {
+    background-color: #1a1a1a;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .card {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 200px;
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    background-color: #e10600;
+  }
+  
+  .equipe {
+    background-color: #111;
+  }
+  
+  footer {
+    padding: 20px;
+    background: black;
+    text-align: center;
+  }
