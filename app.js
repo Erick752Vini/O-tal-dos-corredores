@@ -1,225 +1,76 @@
-// ================================================
-// AYRTON SENNA LANDING PAGE - JAVASCRIPT
-// ================================================
+const express = require("express");
+const app = express();
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // ================================================
-    // NAVBAR SCROLL EFFECT
-    // ================================================
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 156, 59, 0.2)';
-        } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-    // ================================================
-    // MOBILE MENU TOGGLE
-    // ================================================
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        
-        // Animate hamburger
-        const spans = hamburger.querySelectorAll('span');
-        if (navLinks.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
+// Serve static files
+app.use(express.static('.'));
 
-    // ================================================
-    // SMOOTH SCROLL FOR NAVIGATION LINKS
-    // ================================================
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-    
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const navbarHeight = navbar.offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Close mobile menu if open
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                const spans = hamburger.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-    });
-
-    // ================================================
-    // SCROLL REVEAL ANIMATION
-    // ================================================
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    // Add animation classes to sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
-    });
-
-    // Add visible class style
-    const style = document.createElement('style');
-    style.textContent = `
-        section.visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // ================================================
-    // ACHIEVEMENT CARDS HOVER EFFECT
-    // ================================================
-    const achievementCards = document.querySelectorAll('.achievement-card');
-    
-    achievementCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.zIndex = '10';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.zIndex = '1';
-        });
-    });
-
-    // ================================================
-    // HERO IMAGE PARALLAX EFFECT
-    // ================================================
-    const heroImage = document.querySelector('.image-container');
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('.hero');
-        const heroRect = heroSection.getBoundingClientRect();
-        
-        if (heroRect.top < window.innerHeight && heroRect.bottom > 0) {
-            const parallaxValue = scrolled * 0.1;
-            heroImage.style.transform = `translateY(${parallaxValue}px)`;
-        }
-    });
-
-    // ================================================
-    // QUOTE CARDS ANIMATION STAGGER
-    // ================================================
-    const quoteCards = document.querySelectorAll('.quote-card');
-    
-    const quoteObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 150);
-            }
-        });
-    }, { threshold: 0.2 });
-
-    quoteCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        quoteObserver.observe(card);
-    });
-
-    // ================================================
-    // ACTIVE NAV LINK ON SCROLL
-    // ================================================
-    const sectionsForNav = document.querySelectorAll('section[id]');
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sectionsForNav.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinksItems.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // ================================================
-    // CTA BUTTON CLICK EFFECT
-    // ================================================
-    const ctaButton = document.querySelector('.cta-button');
-    
-    ctaButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        const targetId = ctaButton.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
-        if (targetSection) {
-            const navbarHeight = navbar.offsetHeight;
-            const targetPosition = targetSection.offsetTop - navbarHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-
-    // Add active style for nav links
-    const navStyle = document.createElement('style');
-    navStyle.textContent = `
-        .nav-links a.active {
-            color: var(--senna-yellow) !important;
-        }
-        .nav-links a.active::after {
-            width: 100% !important;
-        }
-    `;
-    document.head.appendChild(navStyle);
-
+app.get("/pace-de-moto", (req, res, next) => {
+    return res.status(200).sendFile("senna.html", {root: './'});
 });
+
+// Dados mock para pilotos
+const pilotos = [
+    { id_piloto: 1, nome: "Ayrton Senna", nacionalidade: "Brasil", equipe: "McLaren", titulos: 3 },
+    { id_piloto: 2, nome: "Alain Prost", nacionalidade: "França", equipe: "McLaren", titulos: 4 },
+    { id_piloto: 3, nome: "Michael Schumacher", nacionalidade: "Alemanha", equipe: "Ferrari", titulos: 7 },
+    { id_piloto: 4, nome: "Lewis Hamilton", nacionalidade: "Reino Unido", equipe: "Mercedes", titulos: 7 },
+    { id_piloto: 5, nome: "Nelson Piquet", nacionalidade: "Brasil", equipe: "Williams", titulos: 3 }
+];
+
+// Dados mock para equipes
+const equipes = [
+    { nome: "McLaren" },
+    { nome: "Ferrari" },
+    { nome: "Williams" },
+    { nome: "Mercedes" },
+    { nome: "Red Bull" }
+];
+
+// Dados mock para temporadas
+let temporadas = [
+    { id: 1, ano: 2024 },
+    { id: 2, ano: 2023 }
+];
+
+app.get("/pilotos", (req, res) => {
+    return res.status(200).json(pilotos);
+});
+
+app.get("/pilotos/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const piloto = pilotos.find(p => p.id_piloto === id);
+    if (piloto) {
+        return res.status(200).json([piloto]);
+    }
+    return res.status(200).json([]);
+});
+
+app.get("/equipes", (req, res) => {
+    return res.status(200).json(equipes);
+});
+
+app.post("/temporada", (req, res) => {
+    const temporada = req.body.temporada;
+    const novaTemporada = { id: temporadas.length + 1, ano: temporada };
+    temporadas.push(novaTemporada);
+    return res.status(201).json([{ insertId: novaTemporada.id }]);
+});
+
+app.use((req, res, next) => {
+    const error = new Error("Not found...");
+    error.status = 404;
+    next(error);
+});
+
+app.use((err, req, res, next) => {
+    res.status(err.status || 500).json({
+        error: {
+            message: err.message
+        }
+    });
+});
+
+module.exports = app;
