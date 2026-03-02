@@ -1,17 +1,8 @@
-const express = require("express");
-const path = require("path");
+const http = require('http');
+const app = require('./app');
 
-const app = express();
-const PORT = 3000;
+const server = http.createServer(app);
 
-// Servir arquivos estáticos
-app.use(express.static(__dirname));
-
-// Rota principal
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
-
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+server.listen(3000, () => {
+    console.log("Server is running on port 3000...")
 });
