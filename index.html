@@ -2,54 +2,88 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Max Verstappen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Max Verstappen | F1</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="hero">
-    <div class="overlay">
-      <h1>MAX VERSTAPPEN</h1>
-      <p>3x Campeão Mundial de Fórmula 1</p>
-      <button onclick="scrollSobre()">SAIBA MAIS</button>
-    </div>
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <h2 class="logo">VERSTAPPEN</h2>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#stats">Estatísticas</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="sobre" class="sobre">
-    <h2>Sobre</h2>
-    <p>
-      Max Verstappen é piloto da Red Bull Racing e um dos maiores talentos da história da Fórmula 1.
-      Conhecido por sua agressividade e precisão nas pistas.
-    </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>MAX VERSTAPPEN</h1>
+      <p>Tricampeão Mundial de Fórmula 1</p>
+      <a href="#sobre" class="btn">Explorar</a>
+    </div>
   </section>
 
-  <section class="stats">
-    <h2>Estatísticas</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Vitórias</h3>
-        <p>50+</p>
-      </div>
-      <div class="card">
-        <h3>Pole Positions</h3>
-        <p>30+</p>
-      </div>
-      <div class="card">
-        <h3>Campeonatos</h3>
-        <p>3</p>
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre">
+    <div class="sobre-container">
+      <img src="https://images.unsplash.com/photo-1611068811851-7a0b0f0f0f4b" alt="Max Verstappen">
+      <div>
+        <h2>Sobre o Piloto</h2>
+        <p>
+          Max Verstappen é piloto da Oracle Red Bull Racing e um dos maiores talentos da história da Fórmula 1.
+          Conhecido por sua agressividade, velocidade e controle absoluto nas pistas.
+        </p>
+        <p>
+          Estreou na F1 com apenas 17 anos e rapidamente se tornou um dos maiores campeões da era moderna.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="equipe">
-    <h2>Equipe</h2>
-    <p>Oracle Red Bull Racing</p>
+  <!-- ESTATÍSTICAS -->
+  <section id="stats" class="stats">
+    <h2>Estatísticas</h2>
+    <div class="stats-container">
+      <div class="stat-card">
+        <h3>50+</h3>
+        <p>Vitórias</p>
+      </div>
+      <div class="stat-card">
+        <h3>30+</h3>
+        <p>Poles</p>
+      </div>
+      <div class="stat-card">
+        <h3>3</h3>
+        <p>Campeonatos</p>
+      </div>
+      <div class="stat-card">
+        <h3>100+</h3>
+        <p>Pódios</p>
+      </div>
+    </div>
   </section>
 
+  <!-- GALERIA -->
+  <section id="galeria" class="galeria">
+    <h2>Momentos Icônicos</h2>
+    <div class="galeria-container">
+      <img src="https://images.unsplash.com/photo-1603386329225-868f9a2b8b41" alt="Carro F1">
+      <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb" alt="F1 corrida">
+      <img src="https://images.unsplash.com/photo-1621961458348-f013d219b50c" alt="F1 pista">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Max Verstappen Fan Page</p>
+    <p>© 2026 Fan Page Max Verstappen | Desenvolvido por Erick Vinicius</p>
   </footer>
 
-  <script src="app.js"></script>
 </body>
 </html>
