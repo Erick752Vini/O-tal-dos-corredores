@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="50%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#009C3B"/>
+    </linearGradient>
+    <linearGradient id="helmetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFDF00"/>
+      <stop offset="100%" style="stop-color:#FFC107"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Racing lines -->
+  <path d="M0 100 Q200 150 400 100" stroke="#009C3B" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M0 150 Q200 200 400 150" stroke="#009C3B" stroke-width="1" fill="none" opacity="0.2"/>
+  <path d="M0 200 Q200 250 400 200" stroke="#FFDF00" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M0 400 Q200 350 400 400" stroke="#009C3B" stroke-width="1" fill="none" opacity="0.2"/>
+  
+  <!-- Helmet outline (stylized) -->
+  <ellipse cx="200" cy="200" rx="90" ry="100" fill="#1a1a1a" stroke="url(#helmetGrad)" stroke-width="3"/>
+  
+  <!-- Helmet details -->
+  <path d="M130 170 Q200 140 270 170" fill="none" stroke="#FFDF00" stroke-width="2"/>
+  <path d="M140 200 Q200 180 260 200" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Visor -->
+  <ellipse cx="200" cy="195" rx="65" ry="35" fill="#0a0a0a" stroke="#FFDF00" stroke-width="2"/>
+  <ellipse cx="200" cy="195" rx="55" ry="25" fill="url(#helmetGrad)" opacity="0.3"/>
+  
+  <!-- Helmet stripe -->
+  <path d="M145 140 Q200 100 255 140" fill="none" stroke="#FFDF00" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Name -->
+  <text x="200" y="360" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="36" fill="#FFDF00" font-weight="bold">SENNA</text>
+  
+  <!-- Years -->
+  <text x="200" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#888">1960 - 1994</text>
+  
+  <!-- Championship stars -->
+  <g filter="url(#glow)">
+    <text x="140" y="430" text-anchor="middle" font-size="20" fill="#FFDF00">★</text>
+    <text x="170" y="430" text-anchor="middle" font-size="20" fill="#FFDF00">★</text>
+    <text x="200" y="430" text-anchor="middle" font-size="20" fill="#FFDF00">★</text>
+  </g>
+  
+  <!-- Number 1 -->
+  <text x="320" y="80" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="60" fill="#009C3B" opacity="0.5">1</text>
+</svg>

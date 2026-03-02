@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#141414"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFDF00"/>
+      <stop offset="100%" style="stop-color:#FFC107"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad2)"/>
+  
+  <!-- Racing car silhouette -->
+  <path d="M50 280 L80 280 L100 240 L180 220 L280 220 L340 250 L360 280 L350 290 L300 290 L280 260 L150 260 L120 290 Z" 
+        fill="#1a1a1a" stroke="#333" stroke-width="2"/>
+  
+  <!-- Driver helmet -->
+  <circle cx="150" cy="235" r="20" fill="url(#yellowGrad)"/>
+  <ellipse cx="150" cy="235" rx="12" ry="8" fill="#0a0a0a"/>
+  
+  <!-- Wheels -->
+  <circle cx="100" cy="290" r="35" fill="#222" stroke="#444" stroke-width="3"/>
+  <circle cx="100" cy="290" r="20" fill="#333"/>
+  <circle cx="310" cy="290" r="35" fill="#222" stroke="#444" stroke-width="3"/>
+  <circle cx="310" cy="290" r="20" fill="#333"/>
+  
+  <!-- Speed lines -->
+  <path d="M20 200 L80 205" stroke="#009C3B" stroke-width="2" opacity="0.5"/>
+  <path d="M30 220 L70 222" stroke="#009C3B" stroke-width="2" opacity="0.5"/>
+  <path d="M25 240 L90 245" stroke="#FFDF00" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Number -->
+  <text x="320" y="180" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="100" fill="#FFDF00" opacity="0.15">1</text>
+  
+  <!-- Checkered flag pattern -->
+  <g opacity="0.3">
+    <rect x="10" y="10" width="15" height="15" fill="#fff"/>
+    <rect x="25" y="10" width="15" height="15" fill="#000"/>
+    <rect x="40" y="10" width="15" height="15" fill="#fff"/>
+    <rect x="55" y="10" width="15" height="15" fill="#000"/>
+    <rect x="10" y="25" width="15" height="15" fill="#000"/>
+    <rect x="25" y="25" width="15" height="15" fill="#fff"/>
+    <rect x="40" y="25" width="15" height="15" fill="#000"/>
+    <rect x="55" y="25" width="15" height="15" fill="#fff"/>
+  </g>
+</svg>
