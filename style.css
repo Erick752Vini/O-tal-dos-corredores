@@ -10,104 +10,106 @@ body {
     color: white;
 }
 
+/* MENU */
+nav {
+    position: fixed;
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff8000;
+}
+
 /* HERO */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
     url("https://upload.wikimedia.org/wikipedia/commons/3/33/Lando_Norris_2022.jpg") center/cover;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 60px;
-    color: #ff8000;
-}
-
-.hero-content p {
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-.btn {
-    background: #ff8000;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: white;
+.hero h1 {
+    font-size: 70px;
     color: #ff8000;
 }
 
 /* SECTIONS */
 section {
-    padding: 80px 10%;
-    text-align: center;
+    padding: 100px 10%;
 }
 
 h2 {
     color: #ff8000;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 /* SOBRE */
-.sobre-container {
+.content {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.sobre-container img {
+.content img {
     width: 300px;
     border-radius: 15px;
 }
 
-.sobre-container p {
-    max-width: 500px;
-}
-
 /* ESTATISTICAS */
-.stats-grid {
+.stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    text-align: center;
 }
 
-.stat {
+.stats div {
     background: #1a1a1a;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(255,128,0,0.4);
 }
 
-.stat h3 {
-    margin-bottom: 10px;
-}
-
-.stat p {
-    font-size: 28px;
+.stats span {
+    font-size: 30px;
     color: #ff8000;
 }
 
-/* CARREIRA */
-.carreira ul {
-    list-style: none;
-    max-width: 600px;
-    margin: auto;
+/* TIMELINE */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.carreira li {
-    padding: 10px;
-    border-bottom: 1px solid #333;
+.event {
+    background: #1a1a1a;
+    padding: 20px;
+    border-left: 5px solid #ff8000;
+    border-radius: 10px;
 }
 
 /* GALERIA */
@@ -128,9 +130,28 @@ h2 {
     box-shadow: 0 0 20px #ff8000;
 }
 
+/* CURIOSIDADES */
+.facts {
+    list-style: none;
+    max-width: 700px;
+    margin: auto;
+}
+
+.facts li {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
 /* FOOTER */
 footer {
     background: black;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
 }
