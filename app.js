@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/verstappen", (req, res) => {
     res.send("Servidor funcionando")
 });
 
