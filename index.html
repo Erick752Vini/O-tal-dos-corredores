@@ -1,11 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gabriel Bortoleto | O Futuro da F1</title>
+    <style>
+        :root {
+            --primary: #002244; /* Azul Marinho (Brasil/Sauber/Audi) */
+            --secondary: #00b140; /* Verde Brasil */
+            --accent: #ffcc00; /* Amarelo Brasil */
+            --text-light: #f4f4f4;
+            --dark: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://diariodepernambuco.com.br/dpmais/wp-content/uploads/2026/02/gabriel.png') no-repeat center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            border-left: 5px solid var(--secondary);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        /* Grid de Conquistas */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border: 1px solid var(--secondary);
+        }
+
+        .stat-card h3 {
+            color: var(--secondary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Tabela de Títulos */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #1e1e1e;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        table th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Elemento Interativo */
+        .interactive-section {
+            background: var(--primary);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .btn-fact {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-fact:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        #fact-display {
+            margin-top: 20px;
+            font-style: italic;
+            min-height: 50px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <header>
+        <h1>Gabriel Bortoleto</h1>
+        <p>Piloto de Fórmula 1 | Campeão de F3</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="sobre">
+            <h2>A Ascensão do Brasileiro</h2>
+            <p>Nascido em São Paulo em 2004, Gabriel Bortoleto Oliveira rapidamente se tornou um dos nomes mais promissores do automobilismo mundial. Com um estilo de pilotagem cerebral e consistente, ele conquistou o mundo ao vencer a Fórmula 3 em seu ano de estreia.</p>
+        </section>
+
+        <section id="conquistas">
+            <h2>Estatísticas de Carreira</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>1</h3>
+                    <p>Título de Fórmula 3 (2023)</p>
+                </div>
+                <div class="stat-card">
+                    <h3>2025</h3>
+                    <p>Estreia na Fórmula 1</p>
+                </div>
+                <div class="stat-card">
+                    <h3>McLaren</h3>
+                    <p>Ex-Membro do Programa de Desenvolvimento</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="trajetoria">
+            <h2>Principais Resultados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Categoria</th>
+                        <th>Equipe</th>
+                        <th>Resultado Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020</td>
+                        <td>Fórmula 4 Italiana</td>
+                        <td>Prema Powerteam</td>
+                        <td>5º Lugar</td>
+                    </tr>
+                    <tr>
+                        <td>2021-22</td>
+                        <td>FRECA</td>
+                        <td>R-ace GP</td>
+                        <td>Vitórias e Pódios</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>FIA Fórmula 3</td>
+                        <td>Trident</td>
+                        <td><strong>Campeão</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>FIA Fórmula 2</td>
+                        <td>Invicta Racing</td>
+                        <td>Postulante ao Título</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="interactive-section">
+            <h2>Curiosidades Rápidas</h2>
+            <p>Clique no botão para descobrir um fato sobre o Gabriel!</p>
+            <button class="btn-fact" onclick="showFact()">Gerar Curiosidade</button>
+            <p id="fact-display">Aguardando clique...</p>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Fã Page Gabriel Bortoleto - Rumo ao Topo da F1.
+    </footer>
+
+    <script>
+        const facts = [
+            "Gabriel foi o primeiro brasileiro a vencer o campeonato da FIA F3.",
+            "Ele é agenciado pela empresa de Fernando Alonso, a A14 Management.",
+            "Em 2025, ele assumirá um assento titular na equipe Stake F1 Team (Audi).",
+            "Bortoleto é conhecido pela sua incrível consistência, raramente cometendo erros em corridas.",
+            "Ele subiu ao pódio logo em sua primeira rodada na Fórmula 3 no Bahrein."
+        ];
+
+        function showFact() {
+            const display = document.getElementById('fact-display');
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            display.innerText = randomFact;
+            display.style.color = "#ffcc00";
+        }
+    </script>
 </body>
 </html>
